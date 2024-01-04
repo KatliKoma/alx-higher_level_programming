@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) == 1:
-        print("0 arguments.\n")  # Added "\n" for a newline character
+
+    argv = sys.argv[1:]
+    num_args = len(argv)
+
+    if num_args == 0:
+        print("0 arguments.")
     else:
-        print("{:d} argument".format(len(sys.argv) - 1), end="")
-        if
- 
-len(sys.argv) > 2:
-            print("s", end="")
-        print(":")
-        for i in
- 
-range(1, len(sys.argv)):
-            print("{:d}: {:s}".format(i, sys.argv[i]))
+        print("{} argument{}:".format(num_args, 's' if num_args > 1 else ''))
+        for i, arg in enumerate(argv, start=1):
+            print("{}: {}".format(i, arg))
