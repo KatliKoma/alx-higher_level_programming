@@ -1,7 +1,14 @@
 #!/usr/bin/python3
-""" this module defines a empty class square """
+"""Defines a class named Square.
 
+This module contains a simple implementation of an empty class called Square.
+It is created as part of Task 0.
+
+Classes:
+    Square: A class representing a square.
+
+"""
 
 class Square:
-    """ empty class for task 0 """
+    """Empty class for Task 0."""
     pass
