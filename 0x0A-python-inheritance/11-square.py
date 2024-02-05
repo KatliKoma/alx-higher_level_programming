@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-"""This script defines a Square class that is a subclass of Rectangle."""
-from importlib import import_module
 
-# Import the Rectangle class from the '9-rectangle' module.
-Rectangle = import_module('9-rectangle').Rectangle
+
+Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
-    """Represents a geometric square."""
-
+    """square shape class, super class is BaseGeometry, then Rectangle
+    """
     def __init__(self, size):
-        """Creates a new square object.
-
-        Args:
-            size (int): The side length of the square.
+        """instantiation method for class
         """
-        # Validate the 'size' parameter as an integer.
-        self.integer_validator("size", size)
-        # Initialize the square by calling the parent class constructor with 'size' for both width and height.
         super().__init__(size, size)
-        # Set the private instance attribute '__size' to the provided 'size'.
+        self.integer_validator("size", size)
+        self.__size = size
+
+    def __str__(self):
+        """overide magic str method for class
+        """
+        string = "[Square] " + str(self.__size) + '/'
+        string += str(self.__size)
+        return string
