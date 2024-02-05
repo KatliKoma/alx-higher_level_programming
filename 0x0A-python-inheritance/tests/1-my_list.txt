@@ -1,0 +1,43 @@
+Test Case 1:
+- Description: Print a list with integers in ascending order.
+- Input: [1, 4, 2, 3, 5]
+- Expected Output:
+  Original list:
+  [1, 4, 2, 3, 5]
+  Sorted list:
+  [1, 2, 3, 4, 5]
+  Original list after sorting:
+  [1, 4, 2, 3, 5]
+
+Test Case 2:
+- Description: Print an empty list.
+- Input: []
+- Expected Output:
+  Original list:
+  []
+  Sorted list:
+  []
+  Original list after sorting:
+  []
+
+Test Case 3:
+- Description: Print a list with negative integers.
+- Input: [-3, -1, -2, -5, -4]
+- Expected Output:
+  Original list:
+  [-3, -1, -2, -5, -4]
+  Sorted list:
+  [-5, -4, -3, -2, -1]
+  Original list after sorting:
+  [-3, -1, -2, -5, -4]
+
+Test Case 4:
+- Description: Print a list with repeating integers.
+- Input: [3, 1, 2, 3, 2]
+- Expected Output:
+  Original list:
+  [3, 1, 2, 3, 2]
+  Sorted list:
+  [1, 2, 2, 3, 3]
+  Original list after sorting:
+  [3, 1, 2, 3, 2]
