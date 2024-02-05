@@ -1,23 +1,15 @@
 #!/usr/bin/python3
+"""
+Creates class inheriting from list class.
+"""
+
 
 class MyList(list):
-    """Inherits from list"""
+    """Class MyList inherits."""
 
     def print_sorted(self):
-        """Prints the list, but sorted (ascending sort)."""
-        print(sorted(self))
+        """Prints the list."""
 
-# Testing the class
-if __name__ == "__main__":
-    my_list = MyList()
-    my_list.append(1)
-    my_list.append(4)
-    my_list.append(2)
-    my_list.append(3)
-    my_list.append(5)
-    print("Original list:")
-    print(my_list)
-    print("Sorted list:")
-    my_list.print_sorted()
-    print("Original list after sorting:")
-    print(my_list)
+        new_list = self[:]
+        new_list.sort()
+        print("{}".format(new_list))
