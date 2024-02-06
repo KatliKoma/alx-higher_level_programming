@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-"""Implements a function for loading objects from JSON files."""
+"""
+Generates a Python object based on the content of a JSON file.
+"""
+
 import json
 
 def load_from_json_file(filename):
-    """makes a Python object from a JSON file."""
-    with open(filename) as f:
+    """Generates and returns a Python object from a specified JSON file.
+    Parameters:
+        - filename: The name of the file containing JSON data.
+    Returns:
+        The Python object created from the JSON file's data.
+    """
+
+    with open(filename, 'r') as f:
         return json.load(f)
