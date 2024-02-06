@@ -1,25 +1,28 @@
 #!/usr/bin/python3
-"""Module for defining the Student class."""
+"""Module 9-student.
+Introduces the Student class for creating student objects.
+"""
 
 class Student:
-    """A class for creating student objects."""
+    """Defines a student with attributes and methods.
+    Attributes:
+        - first_name: First name of the student.
+        - last_name: Last name of the student.
+        - age: Age of the student.
+    Methods:
+        - to_json: Returns a dictionary representation of the student.
+    """
 
     def __init__(self, first_name, last_name, age):
-        """Initializes a new Student instance.
-        
-        Args:
-            first_name: The first name of the student.
-            last_name: The last name of the student.
-            age: The age of the student.
-        """
+        """Constructs a new Student object with the given attributes."""
+
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """Returns a dictionary representation of the instance.
-        
-        Returns:
-            A dictionary containing all the key/value pairs of the instance's attributes.
+        """Converts the student object to a dictionary format.
+        Returns: A dictionary containing the student's attributes.
         """
-        return self.__dict__.copy()
+
+        return self.__dict__
