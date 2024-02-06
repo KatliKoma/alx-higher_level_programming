@@ -1,13 +1,29 @@
 #!/usr/bin/python3
-""" Module designed to generate a dictionary representation 
-    using simple data structures, facilitating the JSON serialization of an object.
+"""
+Creates a Student class.
 """
 
 
-def class_to_json(obj):
-    """ Function that retuns the dictionary description of an obj """
+class Student:
+    """attributes for a student.
+    Public attributes:
+        - first_name
+        - last_name
+        - age
+    Public method to_json().
+    """
 
-    res = {}
-    if hasattr(obj, "__dict__"):
-        res = obj.__dict__.copy()
-    return res
+    def __init__(self, first_name, last_name, age):
+        """Initializes the Student instance."""
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """Retrieves a dictionary representation
+        of a Student instance.
+        Returns: the dict representation of the instance.
+        """
+
+        return self.__dict__
