@@ -7,9 +7,12 @@ strings, integers, and booleans.
 """
 
 def class_to_json(obj):
-    """ Function that retuns the dictionary description of an obj """
+    """Creates a dict description of obj.
 
-    res = {}
-    if hasattr(obj, "__dict__"):
-        res = obj.__dict__.copy()
-    return res
+    Args:
+        - obj: object to serialize
+
+    Returns: dictionnary description of obj
+    """
+
+    return obj.__dict__
