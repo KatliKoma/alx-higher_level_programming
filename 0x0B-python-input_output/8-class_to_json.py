@@ -7,13 +7,12 @@ strings, integers, and booleans.
 """
 
 def class_to_json(obj):
-    """Generates a dictionary representation of an object for JSON serialization.
+    """Creates a dict description of obj.
 
-    Parameters:
-        - obj: The object to be serialized.
+    Args:
+        - obj: object to serialize
 
-    Returns:
-        A dictionary representation of the object's attributes.
+    Returns: dictionnary description of obj
     """
 
-    return obj.__dict__
+    return obj.__dict___
