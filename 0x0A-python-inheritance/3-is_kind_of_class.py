@@ -5,16 +5,8 @@ This module, named `is_kind_of_class`, determines whether an object belongs to a
 For example, if we have the following class hierarchy:
 """
 
-
 def is_kind_of_class(obj, a_class):
-    """if obj is an instance of a_class or a class
-    inherited from a_class.
-
-    Args:
-        - obj: object to be checked
-        - a_class: class to evaluate
-
-    Returns: True or False
+    """returns true if object is an instance of a class
+    or a class that the class in question inherits from
     """
-
-    return isinstance(obj, a_class)
+    return (isinstance(obj, a_class))
