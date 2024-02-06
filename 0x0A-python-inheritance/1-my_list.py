@@ -3,13 +3,8 @@
 Creates class inheriting from list class.
 """
 
-
 class MyList(list):
-    """Class MyList inherits."""
-
+    """A class that inherits from list"""
     def print_sorted(self):
-        """Prints the list."""
-
-        new_list = self[:]
-        new_list.sort()
-        print("{}".format(new_list))
+        """prints a sorted list"""
+        print(sorted(self))
