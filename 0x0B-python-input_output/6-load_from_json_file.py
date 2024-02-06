@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""Provides a function to convert a JSON string back into a Python object."""
+"""Module for generating a Python object from a JSON file."""
 import json
 
-def from_json_string(my_str):
-    """Converts a JSON-formatted string into its corresponding Python object.
+def load_from_json_file(filename):
+    """Generates a Python object based on a JSON file's content.
 
-    Args:
-        my_str: A string in JSON format.
+    Parameters:
+        filename: The name of the file containing JSON data.
 
-    Returns:
-        The Python object derived from the JSON string.
+    Raises:
+        Exception: If there's an issue decoding the JSON data.
+
     """
-    return json.loads(my_str)
+    with open(filename, 'r', encoding="utf-8") as f:
+        return json.load(f)
