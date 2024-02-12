@@ -4,7 +4,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Rectangle class that inherits from Base."""
-
+    
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle."""
         super().__init__(id)
@@ -16,7 +16,12 @@ class Rectangle(Base):
     def area(self):
         """Return the area of the Rectangle instance."""
         return self.width * self.height
-    
+
+    def display(self):
+        """Print the Rectangle instance with the character '#'."""
+        for _ in range(self.height):
+            print("#" * self.width)
+
     @property
     def width(self):
         """Get the width of the rectangle."""
@@ -70,3 +75,4 @@ class Rectangle(Base):
             raise ValueError(f"{attribute} must be >= 0")
         if not non_negative and value <= 0:
             raise ValueError(f"{attribute} must be > 0")
+
