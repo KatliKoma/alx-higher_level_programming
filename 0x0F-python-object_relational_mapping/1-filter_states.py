@@ -1,30 +1,44 @@
 #!/usr/bin/python3
-"""Lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa"""
-
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
     # Check if correct number of arguments is provided
     if len(sys.argv) != 4:
-        print("Usage: ./1-filter_states.py <username> <password> <database>")
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
-    # Connect to MySQL database
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    # Extract command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    # Create cursor
-    cur = db.cursor()
+    try:
+        # Connect to MySQL server
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database
+        )
 
-    # Execute SQL query to select states starting with 'N'
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Create a cursor object
+        cursor = db.cursor()
 
-    # Fetch and print the rows
-    for row in cur.fetchall():
-        print(row)
+        # Execute the query to select states starting with 'N'
+        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    # Close cursor and database connection
-    cur.close()
-    db.close()
+        # Fetch all rows
+        states = cursor.fetchall()
+
+        # Display results
+        for state in states:
+            print(state)
+
+        # Close cursor and database connection
+        cursor.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print("Error connecting to MySQL:", e)
