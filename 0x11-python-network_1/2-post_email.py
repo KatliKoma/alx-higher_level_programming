@@ -4,14 +4,16 @@
 This script sends a POST request to a URL with an email parameter.
 """
 
+import sys
 import urllib.parse
 import urllib.request
-import sys
+
 
 if __name__ == "__main__":
-    url, email = sys.argv[1], sys.argv[2]
-    data = urllib.parse.urlencode({'email': email}).encode('ascii')
+    url = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
 
-    with urllib.request.urlopen(url, data) as response:
-        print(response.read().decode('utf-8'))
-
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as resp:
+        print(resp.read().decode("utf-8"))
