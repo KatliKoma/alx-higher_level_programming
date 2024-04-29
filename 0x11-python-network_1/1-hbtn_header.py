@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-import urllib.request
-import sys
+
 """
 This script fetches the 'X-Request-Id' header value from a URL provided as a command-line argument using urllib.request.
 """
 
-if __name__ == "__main__":
-    url = sys.argv[1]
+import urllib.request
+import sys
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+
+if __name__ == "__main__":
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        html = response.info()
+        value = html.get('X-Request-Id')
+        print(value)
