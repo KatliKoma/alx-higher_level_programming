@@ -1,5 +1,4 @@
 #!/usr/bin/node
-//display title of film by id/release order using starwars API
 const request = require('request');
 const episodeNum = process.argv[2];
 const API_URL = 'https://swapi-api.hbtn.io/api/films/';
