@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//display amount of films featuring Wedge Antilles using starwars API
+
 const request = require('request');
 
 request(process.argv[2], function (error, response, body) {
